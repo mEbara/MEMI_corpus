@@ -18,9 +18,9 @@ def listup_games(path):
     for item in game_list:
         print(item)
 
-def load_game(game):
-    path = "corpus"
-    scenariofile = f"{game}.json"
+def load_game(scenarioID):
+    path = "data"
+    scenariofile = f"{scenarioID}.json"
 
     with open(os.path.join(path, "scenario", scenariofile), mode="r", encoding="UTF-8") as f:
         scenario = json.load(f)
