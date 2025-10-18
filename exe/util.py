@@ -42,7 +42,7 @@ def save_output(output_dir:str, order: str, model: str, scenarioID:str, chat_his
     info["Patient status"] = patient_status
     chat_history["Info"] = info # add "model version", "system prompt", "patient param"
 
-    output_dir_path:str = f"{output_dir}/{name}-{order}"
+    output_dir_path:str = f"{output_dir}/{name}{order}"
     Path(output_dir_path).mkdir(exist_ok=True)  # make today's directory
     print('The output is saved ->', f"{os.getcwd()}/{output_dir_path}/{scenarioID}.json")
     
