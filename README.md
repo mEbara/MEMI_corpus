@@ -53,12 +53,13 @@ Navigate to the execution directory:
 ```
 cd exe
 ```
-
+The corpus dataset is provided in a compressed format.  
+Please unzip it before executing any scripts:
 ```
 unzip data.zip
 ```
 
-List all available scenarios:
+List all available clinical scenarios:
 ```
 python play.py --play_mode Listup
 ```
@@ -67,7 +68,7 @@ Run a specific scenario manually (e.g., Q1):
 ```
 python play.py --play_mode Interaction -- scenarioID Q1
 ```
-After execution, the outputs are automatically saved in outputs/ directory.
+After execution, all results are automatically saved in the `outputs/` directory.
 
 
 ## 🧮 Scoring
