@@ -1,8 +1,12 @@
+.gitignore
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
 src/
+exe/
+analysis/
 
 # C extensions
 *.so

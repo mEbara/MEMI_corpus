@@ -2,14 +2,14 @@ import os, sys, re, json
 import codecs
 from collections import defaultdict
 
-import util as util, models as models
+import exe.util as util, exe.models as models
 
 from tap import Tap
 
 
 class Args(Tap):
-    scenarioID: str = "Q38"
-    play_mode: str = "Interaction" # Interaction or GPT or LLAMA or RANDOM
+    scenarioID: str = "Q1"
+    play_mode: str = "Interaction" # Listup or Interaction or GPT or LLAMA or RANDOM
     output_dir: str = "outputs"
     language: str = "EN" # EN or JA
     order: str = "-1"
@@ -88,7 +88,7 @@ class LLM_mode:
     def __init__(self, args: Args):
         self.args: Args = args
         
-        self.model : str = args.play_mode # GPT, LLAMA
+        self.model  : str = args.play_mode # GPT, LLAMA
         self.seed  : int = int(args.order[1:])
 
         # setup
@@ -206,9 +206,20 @@ class LLM_mode:
                 self.chat_history["Trajectory"] = self.Trajectory
                 util.save_output(self.output_dir, self.order, self.model, self.scenarioID, self.chat_history, self.patient_status, self.language)
                 break
-      
+
+class Listup_mode:
+    def __init__(self, args: Args):
+        self.args: Args = args
+    def run(self):
+        scenario_info = util.load_json("data/scenario_info.json")
+        for item in scenario_info.items():
+            print(item[0],'\t', item[1])
+
+
 
 def main(args: Args):
+    if args.play_mode == "Listup":
+        play = Listup_mode(args=args)
     if args.play_mode == "Interaction":
         play = Interaction_mode(args=args)
     else:

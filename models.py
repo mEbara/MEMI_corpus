@@ -14,11 +14,14 @@ config = util.load_json('config.json') # Set API, instruction prompt, model vers
 
 def run_GPT(scenario, tree, annotate, context_messages, game_text, options, language, seed):
     client = OpenAI(api_key=config["GPT"]["API"])
-    model_version = config["GPT"]["Model version"]
-    temporature   = config["GPT"]["temperature"]
-    top_p         = config["GPT"]["top_p"]
-
+    #model_version = "gpt-4o-2024-08-06"  #'gpt-3.5-turbo-1106" "gpt-3.5-turbo-0125"
+    model_version = config["GPT"]["Model version"] # gpt-4o-2024-11-20
+    
     choice_text = util.make_options_text(options, language) ## options' texts
+
+    ## if you need with contexts, please comment out below
+    #context_messages = []
+    ###
 
     if len(context_messages) == 0:
         system_text = util.get_role_text(scenario['node_1'][language], language) + config["GPT"]["Instruction prompt"] ## SYSTEM PROMPT
@@ -36,30 +39,32 @@ def run_GPT(scenario, tree, annotate, context_messages, game_text, options, lang
     
     response = client.chat.completions.create(model=model_version,
                                               messages=context_messages,
-                                              temperature=temporature,
-                                              top_p=top_p,
+                                              temperature=1,
+                                              top_p=1,
                                               seed=seed
                                               )
     response_message = response.choices[0].message.content
+    #output = res['choices'][0]['message']['content']
+
     output = response_message
 
+    #answer = re.findall(r'([A-Z])', output)
     answer = re.findall(r'([1-9])', output)
 
+    # outputをcontextに追加
     context_messages.append({
                             'role': 'assistant',
                             'content': output,
     })    
 
-    return output, answer, choice_text, context_messages
 
+    return output, answer, choice_text, context_messages
 
 
 def run_llama(scenario, tree, annotate, context_messages, game_text, options, language,seed):
     os.environ["REPLICATE_API_TOKEN"] = config["LLAMA"]["API"]
     instruction_prompt = util.get_role_text(scenario['node_1'][language], language) + config["LLAMA"]["Instruction prompt"] ## SYSTEM PROMPT
     model_version = config["LLAMA"]["Model version"]
-    temporature   = config["LLAMA"]["temperature"]
-    top_p         = config["LLAMA"]["top_p"]
    
     # Create input text
     choice_text = util.make_options_text(options, language) # options
@@ -69,8 +74,8 @@ def run_llama(scenario, tree, annotate, context_messages, game_text, options, la
     output = replicate.run(
         model_version,
         input={
-            "top_p": top_p,
-            "temperature": temporature,
+            "top_p": 1,
+            "temperature": 1,
             "seed": seed,
             "system_prompt": instruction_prompt,
             "prompt": prompt,

@@ -1,12 +1,18 @@
 {
   "GPT":{
+    "Name" : "GPT",
     "API":"    Fill your API    ", 
-    "Model version":"",
-    "Instruction prompt": "Regarding the following content, please choose only one option from the provided choices that best suits your role. In your response, first write the number of the chosen option, and then list the reason for your selection.\n"
+    "Model version":"  ",
+    "Instruction prompt": "Regarding the following content, please choose only one option from the provided choices that best suits your role. In your response, first write the number of the chosen option, and then list the reason for your selection.\n",
+    "temperature": 1.0,
+    "top_p": 1.0
     },
-    "LLAMA":{
-    "API":"    Fill your API    ",
-    "Model version":"",
-    "Instruction prompt":"以下のシナリオを注意深く読み、記載された状況に基づいて、質問に回答してください。\nなお、回答は、選択肢の番号の後に、その選択理由を記載してください。\n例: ['2:薬をビタミン剤と説明して処方する。', '理由:薬を飲むことが最も効果があると考えたため。']\n\n"
+  "LLAMA":{
+    "Name" : "LLAMA",
+    "API" : "    Fill your API    ",
+    "Model version" : "  ",
+    "Instruction prompt":"以下のシナリオを注意深く読み、記載された状況に基づいて、質問に回答してください。\nなお、回答は、選択肢の番号の後に、その選択理由を記載してください。\n例: ['2:薬をビタミン剤と説明して処方する。', '理由:薬を飲むことが最も効果があると考えたため。']\n\n",
+    "temperature": 1.0,
+    "top_p": 1.0
   }
 }

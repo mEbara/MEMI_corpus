@@ -5,7 +5,7 @@ import os, sys, re, json, random, datetime
 import codecs
 from pathlib import Path
 from collections import defaultdict
-import util
+import util as util
 
 
 def load_json(path: str) -> dict:
@@ -31,17 +31,18 @@ def load_game(scenarioID):
     return scenario, tree, annotation
 
 def save_output(output_dir:str, order: str, model: str, scenarioID:str, chat_history: dict, patient_status: list, language:str) -> None:
+    config = load_json('config.json')
     if model == "interaction":
-        model = "Human"
+        name = "Human"
         info = {"Model version": "Human"}
     else:
-        info =  {k: v for k, v in load_json('config.json')[model].items() if k != 'API'} #config.jsonで設定を管理
+        info =  {k: v for k, v in config[model].items() if k != 'API'} #config.jsonで設定を管理
+        name = config[model]["Name"]
 
     info["Patient status"] = patient_status
     chat_history["Info"] = info # add "model version", "system prompt", "patient param"
 
-    today:str = str(datetime.date.today())
-    output_dir_path:str = f"{output_dir}/{model}-{today}{order}"
+    output_dir_path:str = f"{output_dir}/{name}-{order}"
     Path(output_dir_path).mkdir(exist_ok=True)  # make today's directory
     print('The output is saved ->', f"{os.getcwd()}/{output_dir_path}/{scenarioID}.json")
     
