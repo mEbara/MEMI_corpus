@@ -83,26 +83,34 @@ After scenarios have been executed:
 cd ../analysis
 python aggregate.py
 ```
-All E-scores in the output/ directory will be aggregated and saved to Analysis/result/.
+All E-scores in the output/ directory will be aggregated and saved to `analysis/result/`.
 
 
 ## 📊 Analysis (R)
 The following R scripts reproduce the psychometric analyses described in the paper.
 
+Please start R and navigate to the analysis directory:
+```
+r
+setwd("analysis")
+```
+
 1️⃣ Reliability & Model Fit Assessment
 ```
 source("corpus_assess.r")
+# Default path uses English results.
+# Change the path if you want to analyze another dataset.
 
 print(omega_result)   # Internal consistency (Cronbach's α, McDonald's ω)
-print(cfa_result)     # Unidimesionality (CFI, TLI, RMSEA, SRMR)
-print(q3_result)      # local dependence summary
+print(cfa_result)     # Unidimesionality (CFI, TLI, RMSEA)
+print(q3_result)      # local dependence
 print(TIC)            # Test Information Curve (TIC)
 print(coef_result)    # Discrimination (a) and Difficulty (b) parameters
 ```
 
 2️⃣ θ Estimation and Group Comparison
 ```
-source("estimate_theta.r") # The KDE plot of θ distributions is automatically saved as PDF.
+source("estimate_theta.r") # The KDE plot is automatically saved as PDF.
 
 print(result)              # Mean and SD of θ for each group
 ```

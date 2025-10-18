@@ -16,7 +16,7 @@ library(ggrepel)
 
 # ---- Load response data (wide format) ----
 # Each row: subject / Each column: item responses
-df <- read.csv("analysis/result/EN_result.csv",
+df <- read.csv("result/EN_result.csv",
                row.names = 1,
                stringsAsFactors = FALSE)
 
@@ -55,4 +55,4 @@ theta_plot <- ggplot(theta_df, aes(x = Theta, fill = Group)) +
                      labs(x = expression(theta), y = "Density") +
                      theme_minimal()
 
-ggsave("analysis/theta_plot.pdf", plot = theta_plot, width = 8, height = 8, dpi = 500)
+ggsave("theta_plot.pdf", plot = theta_plot, width = 8, height = 8, dpi = 500)

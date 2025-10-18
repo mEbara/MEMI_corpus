@@ -17,7 +17,7 @@ library(mirt)
 
 # ---- Load response data (wide format) ----
 # Each row: subject / Each column: item responses
-data <- read.csv("analysis/result/EN_result.csv",
+data <- read.csv("result/EN_result.csv",
                  row.names = 1,
                  stringsAsFactors = FALSE)
 
@@ -36,7 +36,10 @@ Scree <- VSS.scree(comat)
 
 # Tip: Passing raw data + ordered=... lets lavaan compute polychorics internally.
 item_names <- colnames(data) # Identify ordinal items (2–10 unique numeric categories)
-ordinal_items <- item_names[sapply(data[, item_names], function(x) {ux <- na.omit(unique(x)) is.numeric(x) && length(ux) >= 2 && length(ux) <= 10})]
+ordinal_items <- item_names[sapply(data[, item_names], function(x) {
+  ux <- na.omit(unique(x))       
+  is.numeric(x) && length(ux) >= 2 && length(ux) <= 10
+})]
 
 model <- '
 F1 =~ Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12 + Q13 + Q14 + Q15 + Q16 + Q17 + Q18 + Q19 + Q20 + Q21 + Q22 + Q23 + Q24 + Q25 + Q26 + Q27 + Q28 + Q29 + Q30 + Q31 + Q32 + Q33 + Q34 + Q35 + Q36 + Q37 + Q38 + Q39 + Q40 + Q41 + Q42 + Q43 + Q44 + Q45 + Q46 + Q47 + Q48 + Q49 + Q50
