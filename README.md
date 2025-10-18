@@ -8,7 +8,7 @@ The corpus enables reproducible simulations of clinical ethical dilemmas and qua
 ## 🚀 Features
 
 - Evaluate the **ethicality** of both **LLMs and human respondents** in simulated clinical scenarios  
-- Execute experiments with **human responses, GPT models, and LLaMA-based models　(via API)**  
+- Execute experiments with **human responses, GPT models, and LLaMA-based models (via API) **  
 - Estimate **latent ethicality scores** using **Item Response Theory (IRT)**–based scoring  
 - Analyze **reliability, validity of Corpus** through integrated R scripts
 
