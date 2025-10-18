@@ -8,7 +8,7 @@ import random
 from openai import OpenAI
 import replicate
 
-import exe.util as util
+import util as util
 
 config = util.load_json('config.json') # Set API, instruction prompt, model version
 

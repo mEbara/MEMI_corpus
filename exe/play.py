@@ -2,7 +2,7 @@ import os, sys, re, json
 import codecs
 from collections import defaultdict
 
-import exe.util as util, exe.models as models
+import util as util, models as models
 
 from tap import Tap
 
