@@ -132,7 +132,6 @@ def get_patient_status(gamefile:str, status_text:str, language: str) -> list:
         patient_data = status_data
     else:
         patient_data = [status_data[0]] + [lex[x][language] for x in status_data[1:]]
-    print('patient data:', patient_data)     # 16_Male_White_DD
     return patient_data
 
 

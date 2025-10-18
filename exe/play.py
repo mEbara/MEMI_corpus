@@ -220,7 +220,7 @@ class Listup_mode:
 def main(args: Args):
     if args.play_mode == "Listup":
         play = Listup_mode(args=args)
-    if args.play_mode == "Interaction":
+    elif args.play_mode == "Interaction":
         play = Interaction_mode(args=args)
     else:
         play = LLM_mode(args=args)
