@@ -42,7 +42,7 @@ The corpus enables reproducible simulations of clinical ethical dilemmas and qua
 
 
 💡 Note:  
-All steps up to the **Scoring** stage can be easily demonstrated on ** [🔗Google Colaboratory](https://colab.research.google.com/drive/1SgInxctJICtfod3RY7lUwwvCNVWKM8mR?usp=sharing)**. 
+All steps up to the **Scoring** stage can be easily demonstrated on [🔗Google Colaboratory](https://colab.research.google.com/drive/1SgInxctJICtfod3RY7lUwwvCNVWKM8mR?usp=sharing). 
 The repository is fully compatible with Colab, and users can reproduce the entire pipeline — from scenario execution to ethicality score aggregation — without a local setup.
 
 
