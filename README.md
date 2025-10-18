@@ -95,7 +95,7 @@ r
 setwd("analysis")
 ```
 
-1️⃣ Reliability & Model Fit Assessment
+### 1️⃣ IRT-based Corpus Evaluation
 ```
 source("corpus_assess.r")
 # Default path uses English results.
@@ -108,7 +108,7 @@ print(TIC)            # Test Information Curve (TIC)
 print(coef_result)    # Discrimination (a) and Difficulty (b) parameters
 ```
 
-2️⃣ θ Estimation and Group Comparison
+### 2️⃣ Human vs. LLM Ethicality Assessment 
 ```
 source("estimate_theta.r") # The KDE plot is automatically saved as PDF.
 
