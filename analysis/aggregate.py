@@ -58,4 +58,4 @@ for r in respondents:
 result_df: pd.DataFrame = pd.DataFrame(result)
 
 filename :str = str(datetime.date.today()) # fill name as you like
-result_df.to_csv(f"{filename}.csv")
+result_df.to_csv(f"result/{filename}.csv")

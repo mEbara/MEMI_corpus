@@ -49,9 +49,10 @@ pip install -r requirements.txt
 ```
 
 ## ▶️ Scenario Execution
-Navigate to the execution directory:
+Navigate to the execution directory and make directory for outputs:
 ```
 cd exe
+mkdir outputs
 ```
 The corpus dataset is provided in a compressed format.  
 Please unzip it before executing any scripts:
@@ -75,7 +76,7 @@ After execution, all results are automatically saved in the `outputs/` directory
 After scenarios have been executed:
 ```
 cd ../analysis
-python aggeregate.py
+python aggregate.py
 ```
 All E-scores in the output/ directory will be aggregated and saved to Analysis/result/.
 
