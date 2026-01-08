@@ -16,6 +16,12 @@ The corpus enables reproducible simulations of clinical ethical dilemmas and qua
 
 ## 📂 Directory Structure
 ```
+┗ corpus_docs           # Scenario details
+  ┣ Overview            # Scenario characteristics
+  ┗ scenario_graphs     # graph-based visualizations as PDF data
+    ┣ EN                # English version
+    ┗ JA                # Japanese version
+    
 ┗ exe                   # Scenario execution
   ┗ data/               # Core dataset of the corpus
     ┣ annotation/       # Ethical violation labels for each option
