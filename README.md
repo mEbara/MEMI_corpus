@@ -159,5 +159,4 @@ For questions, bug reports, or feature requests, please open an issue on this re
 For other inquiries, please contact:
 
 **Memi Ebara**
-
 📧 8647158202me@gmail.com
