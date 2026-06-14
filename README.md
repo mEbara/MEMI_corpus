@@ -137,6 +137,10 @@ For more details, see the full license text:
 # 📚 Citation
 If you use the MEMI corpus or code in your research, please cite:
 
+### Reference
+Ebara, M., Kawazoe, Y., Seki, T. et al. Quantifying ethical response in LLMs for medicine: corpus development, item response theory-based validation, and bias analysis toward patient attributes. AI Ethics 6, 327 (2026). https://doi.org/10.1007/s43681-026-00998-4
+
+### BibTeX
 ```bibtex
 @article{ebara2026quantifying,
   title={Quantifying ethical response in LLMs for medicine: corpus development, item response theory-based validation, and bias analysis toward patient attributes},
@@ -147,14 +151,13 @@ If you use the MEMI corpus or code in your research, please cite:
   pages={327},
   year={2026},
   doi={10.1007/s43681-026-00998-4}
-}```
-
-```
-Ebara, M., Kawazoe, Y., Seki, T. et al. Quantifying ethical response in LLMs for medicine: corpus development, item response theory-based validation, and bias analysis toward patient attributes. AI Ethics 6, 327 (2026). https://doi.org/10.1007/s43681-026-00998-4
+}
 ```
 
 # 📧 Contact
 For questions, bug reports, or feature requests, please open an issue on this repository.
 For other inquiries, please contact:
+
 **Memi Ebara**
+
 📧 8647158202me@gmail.com
